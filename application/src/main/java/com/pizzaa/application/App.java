@@ -1,4 +1,4 @@
-package com.pizzaa;
+package com.pizzaa.application;
 
 /**
  * Hello world!
