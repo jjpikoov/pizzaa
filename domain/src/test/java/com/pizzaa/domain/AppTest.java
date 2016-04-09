@@ -1,4 +1,4 @@
-package com.pizzaa;
+package com.pizzaa.domain;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

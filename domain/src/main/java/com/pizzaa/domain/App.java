@@ -1,4 +1,4 @@
-package com.pizzaa;
+package com.pizzaa.domain;
 
 /**
  * Hello world!
