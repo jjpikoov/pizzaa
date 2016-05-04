@@ -12,4 +12,6 @@ public interface CustomerService {
     void addCustomer(Customer c);
     boolean removeCustomer(int id);
     Customer getCustomer(int id);
+//    void addCustomerOrder(Customer c, Order o);
+//    void removeCustomerOrder(Customer c, Order o);
 }
