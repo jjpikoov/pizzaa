@@ -10,5 +10,6 @@ import java.util.ArrayList;
 public interface DishService {
     ArrayList<Dish> getAllDishes();
     void addDish(Dish d);
-    boolean removeDish(Dish d);
+    boolean removeDish(int id);
+    Dish getDish(int id);
 }

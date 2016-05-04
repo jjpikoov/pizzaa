@@ -10,5 +10,6 @@ import java.util.ArrayList;
 public interface OrderService {
     ArrayList<Order> getAllOrders();
     void addOrder(Order o);
-    boolean removeOrder(Order o);
+    boolean removeOrder(int id);
+    Order getOrder(int id);
 }

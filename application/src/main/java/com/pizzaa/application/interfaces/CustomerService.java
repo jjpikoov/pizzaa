@@ -10,5 +10,6 @@ import java.util.ArrayList;
 public interface CustomerService {
     ArrayList<Customer> getAllCustomers();
     void addCustomer(Customer c);
-    boolean removeCustomer(Customer c);
+    boolean removeCustomer(int id);
+    Customer getCustomer(int id);
 }

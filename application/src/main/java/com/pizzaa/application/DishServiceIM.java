@@ -17,6 +17,9 @@ public class DishServiceIM implements DishService {
     public DishServiceIM(){
         dishRepository = new DishRepositoryIM(); //???
     }
+    public DishServiceIM(DishRepository dishRepository){
+        this.dishRepository = dishRepository;
+    }
 
     public ArrayList<Dish> getAllDishes() {
         return dishRepository.findAll();
@@ -26,10 +29,11 @@ public class DishServiceIM implements DishService {
         dishRepository.insert(d);
     }
 
-    public boolean removeDish(Dish d) {
-        Dish dish = dishRepository.delete(d.getId());
-        if (dish != null)
-            return true;
-        return false;
+    public boolean removeDish(int id) {
+        return this.dishRepository.delete(id);
+    }
+
+    public Dish getDish(int id) {
+        return dishRepository.find(id);
     }
 }

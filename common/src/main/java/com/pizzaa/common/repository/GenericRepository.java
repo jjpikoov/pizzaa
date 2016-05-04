@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public interface GenericRepository<T> {
     void insert(T x);
-    T delete(int id);
+    boolean delete(int id);
     T find(int id);
     ArrayList<T> findAll();
 }
