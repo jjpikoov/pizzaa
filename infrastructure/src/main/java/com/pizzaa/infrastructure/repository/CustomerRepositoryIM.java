@@ -33,16 +33,16 @@ public class CustomerRepositoryIM implements CustomerRepository {
 
 
     public Customer find(int id) {
-        Customer c = null;
+        Customer c;
 
         for (int i = 0; i < customers.size(); i++){
             c = customers.get(i);
             if (c.getId() == id){
-                break;
+                return c;
             }
         }
 
-        return c;
+        return null;
     }
 
     public ArrayList<Customer> findAll() {

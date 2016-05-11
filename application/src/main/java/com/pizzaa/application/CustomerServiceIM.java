@@ -3,6 +3,7 @@ package com.pizzaa.application;
 import com.pizzaa.application.interfaces.CustomerService;
 import com.pizzaa.domain.customer.Customer;
 import com.pizzaa.domain.customer.repository.CustomerRepository;
+import com.pizzaa.domain.order.Order;
 import com.pizzaa.infrastructure.repository.CustomerRepositoryIM;
 
 import java.util.ArrayList;
@@ -36,5 +37,17 @@ public class CustomerServiceIM implements CustomerService {
 
     public Customer getCustomer(int id) {
         return this.customerRepository.find(id);
+    }
+
+    public void addOrderToCustomer(Customer c, Order o) {
+        customerRepository.find(c.getId()).getOrders().add(o);
+    }
+
+    public boolean removeOrderFromCustomer(Customer c, Order o) {
+        return customerRepository.find(c.getId()).getOrders().remove(o);
+    }
+
+    public void confirmEmail(Customer c) {
+        customerRepository.find(c.getId()).setConfirmedEmail(true);
     }
 }
