@@ -1,6 +1,7 @@
 package com.pizzaa.application.interfaces;
 
 import com.pizzaa.domain.dish.Dish;
+import com.pizzaa.domain.dish.Ingredient;
 
 import java.util.ArrayList;
 
@@ -12,4 +13,7 @@ public interface DishService {
     void addDish(Dish d);
     boolean removeDish(int id);
     Dish getDish(int id);
+    void toggleDishAvaiable(Dish d);
+    void addIngredientToDish(Dish d, Ingredient i);
+    boolean removeIngredientFromDish(Dish d, Ingredient i);
 }

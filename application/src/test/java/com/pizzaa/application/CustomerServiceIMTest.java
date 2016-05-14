@@ -1,6 +1,8 @@
 package com.pizzaa.application;
 
+import com.pizzaa.application.interfaces.CustomerService;
 import com.pizzaa.domain.customer.Customer;
+import com.pizzaa.domain.order.Order;
 import com.pizzaa.objectmother.CustomerObjectMother;
 import junit.framework.TestCase;
 
@@ -9,7 +11,7 @@ import junit.framework.TestCase;
  */
 public class CustomerServiceIMTest extends TestCase {
 
-    private CustomerServiceIM customerServiceIM;
+    private CustomerService customerServiceIM;
 
     public void setUp() throws Exception {
 //        super.setUp();
@@ -51,18 +53,45 @@ public class CustomerServiceIMTest extends TestCase {
     }
 
     public void testGetCustomer() throws Exception {
-
+        Customer c = customerServiceIM.getCustomer(1);
+        assertTrue(c == null);
+        customerServiceIM.addCustomer(CustomerObjectMother.customerWithoutOrders(1));
+        int size = customerServiceIM.getAllCustomers().size();
+        assertTrue(customerServiceIM.getAllCustomers().size() == size);
     }
 
     public void testAddOrderToCustomer() throws Exception {
+        Customer c = CustomerObjectMother.customerWithoutOrders(1);
+        customerServiceIM.addCustomer(c);
+
+        assertTrue(c.getOrders().size() == 0);
+        Order o =  new Order();
+
+        customerServiceIM.addOrderToCustomer(c, o);
+        assertTrue(c.getOrders().size() != 0);
 
     }
 
     public void testRemoveOrderFromCustomer() throws Exception {
+        Customer c = CustomerObjectMother.customerWithOneFakeOrder(1);
+        customerServiceIM.addCustomer(c);
+        assertTrue(customerServiceIM.getCustomer(c.getId()).getOrders().size() == 1);
+
+
+        Order o = c.getOrders().get(0);
+
+        customerServiceIM.removeOrderFromCustomer(c, o);
+        assertTrue(customerServiceIM.getCustomer(c.getId()).getOrders().size() == 0);
+
 
     }
 
     public void testConfirmEmail() throws Exception {
+        Customer c = CustomerObjectMother.customerWithoutOrdersNonConfirmedMail(1);
+        customerServiceIM.addCustomer(c);
+        assertTrue(c.isConfirmedEmail() == false);
+        customerServiceIM.confirmEmail(c);
+        assertTrue(c.isConfirmedEmail() == true);
 
     }
 

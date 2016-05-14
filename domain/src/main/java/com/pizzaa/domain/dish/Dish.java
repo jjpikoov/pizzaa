@@ -13,6 +13,11 @@ public class Dish {
     private double totalWeight;
     private ArrayList<Ingredient> ingredients;
 
+
+    public Dish(){
+        this.ingredients = new ArrayList<Ingredient>();
+    }
+
     public int getId() {
         return id;
     }

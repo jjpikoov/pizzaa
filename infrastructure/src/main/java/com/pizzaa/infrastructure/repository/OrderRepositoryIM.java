@@ -30,13 +30,12 @@ public class OrderRepositoryIM implements OrderRepository {
 
 
     public Order find(int id) {
-        Order o = null;
+
         for (Order order : orders){
-            o = order;
-            if (o.getId() == id)
-                break;
+            if (order.getId() == id)
+                return order;
         }
-        return o;
+        return null;
     }
 
     public ArrayList<Order> findAll() {

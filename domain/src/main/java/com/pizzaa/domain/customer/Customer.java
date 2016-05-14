@@ -17,6 +17,10 @@ public class Customer {
     private int phoneNumber;
     private ArrayList<Order> orders;
 
+    public Customer(){
+        orders = new ArrayList<Order>();
+    }
+
     public String getSecondName() {
         return secondName;
     }

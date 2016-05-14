@@ -16,6 +16,10 @@ public class Order {
     private DateFormat finishedAt;
     private String status;
 
+    public Order(){
+        this.dishes = new ArrayList<Dish>();
+    }
+
     public int getId() {
         return id;
     }

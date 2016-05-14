@@ -2,6 +2,7 @@ package com.pizzaa.application;
 
 import com.pizzaa.application.interfaces.DishService;
 import com.pizzaa.domain.dish.Dish;
+import com.pizzaa.domain.dish.Ingredient;
 import com.pizzaa.domain.dish.repository.DishRepository;
 import com.pizzaa.infrastructure.repository.DishRepositoryIM;
 
@@ -36,4 +37,21 @@ public class DishServiceIM implements DishService {
     public Dish getDish(int id) {
         return dishRepository.find(id);
     }
+
+    public void toggleDishAvaiable(Dish d) {
+        if (d.isAvaiable())
+            d.setAvaiable(false);
+        else
+            d.setAvaiable(true);
+    }
+
+    public void addIngredientToDish(Dish d, Ingredient i) {
+        d.getIngredients().add(i);
+    }
+
+    public boolean removeIngredientFromDish(Dish d, Ingredient i) {
+        return d.getIngredients().remove(i);
+    }
+
+
 }

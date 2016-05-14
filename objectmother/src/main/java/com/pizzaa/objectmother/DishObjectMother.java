@@ -37,4 +37,16 @@ public class DishObjectMother {
 
         return d;
     }
+
+    public static Dish dishAvailable(int id){
+        Dish d = new Dish();
+        d.setAvaiable(true);
+        return d;
+    }
+
+    public static Dish dishNotAvailable(int id){
+        Dish d = new Dish();
+        d.setAvaiable(false);
+        return d;
+    }
 }
