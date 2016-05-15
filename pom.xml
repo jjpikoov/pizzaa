@@ -11,6 +11,7 @@
     <module>common</module>
     <module>infrastructure</module>
     <module>objectmother</module>
+    <module>persistence</module>
   </modules>
   <packaging>pom</packaging>
 
