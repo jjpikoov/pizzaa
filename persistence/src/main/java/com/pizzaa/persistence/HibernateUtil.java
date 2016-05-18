@@ -17,6 +17,12 @@ public class HibernateUtil {
             configuration.configure("hibernate.cfg.xml");
 
             configuration.addAnnotatedClass(com.pizzaa.domain.admin.Admin.class);
+            configuration.addAnnotatedClass(com.pizzaa.domain.order.Order.class);
+            configuration.addAnnotatedClass(com.pizzaa.domain.order.Delivery.class);
+            configuration.addAnnotatedClass(com.pizzaa.domain.dish.Dish.class);
+            configuration.addAnnotatedClass(com.pizzaa.domain.dish.Ingredient.class);
+            configuration.addAnnotatedClass(com.pizzaa.domain.dish.persistance.DishIngredient.class);
+            configuration.addAnnotatedClass(com.pizzaa.domain.customer.Customer.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();

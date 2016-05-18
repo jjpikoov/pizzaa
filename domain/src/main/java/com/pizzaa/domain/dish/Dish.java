@@ -1,21 +1,52 @@
 package com.pizzaa.domain.dish;
 
+import com.pizzaa.domain.dish.persistance.DishIngredient;
+import com.pizzaa.domain.order.Order;
+
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 4/9/16.
  */
+@Entity
+@Table
 public class Dish {
-    private int id;
-    private String name;
-    private boolean isAvaiable;
-    private double cost;
-    private double totalWeight;
-    private ArrayList<Ingredient> ingredients;
 
+    @Id
+    @GeneratedValue
+    @Column
+    private int id;
+
+    @Column
+    private String name;
+
+    @Column
+    private boolean isAvaiable;
+
+    @Column
+    private double cost;
+
+    @Column
+    private double totalWeight;
+
+    @OneToMany(mappedBy = "dish", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DishIngredient> ingredients;
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    @ManyToOne
+    private Order order;
 
     public Dish(){
-        this.ingredients = new ArrayList<Ingredient>();
+        this.ingredients = new ArrayList<DishIngredient>();
     }
 
     public int getId() {
@@ -58,11 +89,12 @@ public class Dish {
         this.totalWeight = totalWeight;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
+
+    public List<DishIngredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
+    public void setIngredients(List<DishIngredient> ingredients) {
         this.ingredients = ingredients;
     }
 }

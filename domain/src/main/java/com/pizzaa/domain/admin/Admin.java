@@ -6,21 +6,21 @@ import javax.persistence.*;
  * Created by jjpikoov on 4/9/16.
  */
 @Entity
-@Table(name="ADMIN", uniqueConstraints = @UniqueConstraint(columnNames = {"ID"}))
+@Table
 public class Admin {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false, unique = true, length = 11)
+    @GeneratedValue
+    @Column(nullable = false, unique = true)
     private int id;
 
-    @Column(name = "LOGIN", length = 20, nullable = true)
+    @Column(nullable = true)
     private String login;
 
-    @Column(name = "PASSWORD", length = 20, nullable = false)
+    @Column(nullable = false)
     private String password;
 
-    @Column(name = "EMAIL", length = 20, nullable = true)
+    @Column(nullable = true)
     private String email;
 
     public int getId() {

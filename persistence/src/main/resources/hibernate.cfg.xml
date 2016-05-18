@@ -20,5 +20,14 @@
 
         <!-- Mapping with model class containing annotations -->
         <mapping class="com.pizzaa.domain.admin.Admin"/>
+        <mapping class="com.pizzaa.domain.order.Order"/>
+        <mapping class="com.pizzaa.domain.order.Delivery"/>
+        <mapping class="com.pizzaa.domain.dish.Dish"/>
+        <mapping class="com.pizzaa.domain.dish.Ingredient"/>
+        <mapping class="com.pizzaa.domain.dish.persistance.DishIngredient"/>
+        <mapping class="com.pizzaa.domain.customer.Customer"/>
+
+
+
     </session-factory>
 </hibernate-configuration>

@@ -2,20 +2,41 @@ package com.pizzaa.domain.customer;
 
 import com.pizzaa.domain.order.Order;
 
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 4/9/16.
  */
+@Entity
+@Table
 public class Customer {
+
+    @Id
+    @GeneratedValue
     private int id;
+
+    @Column
     private String firstName;
+
+    @Column
     private String secondName;
+
+    @Column
     private String email;
+
+    @Column
     private String password;
+
+    @Column
     private boolean confirmedEmail;
+
+    @Column
     private int phoneNumber;
-    private ArrayList<Order> orders;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders;
 
     public Customer(){
         orders = new ArrayList<Order>();
@@ -77,7 +98,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public ArrayList<Order> getOrders() {
+    public List<Order> getOrders() {
         return orders;
     }
 
