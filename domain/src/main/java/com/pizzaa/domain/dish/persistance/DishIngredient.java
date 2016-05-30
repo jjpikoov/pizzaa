@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Created by jjpikoov on 5/18/16.
+ * Created by jjpikoov on 5/18/16.a
  */
 @Entity
 @Table
