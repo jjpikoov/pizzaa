@@ -4,7 +4,7 @@ import com.pizzaa.domain.customer.Customer;
 import com.pizzaa.domain.customer.repository.CustomerRepository;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 /**
@@ -45,7 +45,7 @@ public class CustomerRepositoryIM implements CustomerRepository {
         return null;
     }
 
-    public ArrayList<Customer> findAll() {
+    public List<Customer> findAll() {
         return customers;
     }
 }

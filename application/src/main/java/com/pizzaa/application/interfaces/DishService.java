@@ -3,13 +3,13 @@ package com.pizzaa.application.interfaces;
 import com.pizzaa.domain.dish.Dish;
 import com.pizzaa.domain.dish.Ingredient;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 4/9/16.
  */
 public interface DishService {
-    ArrayList<Dish> getAllDishes();
+    List<Dish> getAllDishes();
     void addDish(Dish d);
     boolean removeDish(int id);
     Dish getDish(int id);

@@ -3,10 +3,11 @@ package com.pizzaa.application;
 import com.pizzaa.application.interfaces.DishService;
 import com.pizzaa.domain.dish.Dish;
 import com.pizzaa.domain.dish.Ingredient;
+import com.pizzaa.domain.dish.persistance.DishIngredient;
 import com.pizzaa.domain.dish.repository.DishRepository;
 import com.pizzaa.infrastructure.repository.DishRepositoryIM;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 4/9/16.
@@ -22,7 +23,7 @@ public class DishServiceIM implements DishService {
         this.dishRepository = dishRepository;
     }
 
-    public ArrayList<Dish> getAllDishes() {
+    public List<Dish> getAllDishes() {
         return dishRepository.findAll();
     }
 
@@ -46,7 +47,7 @@ public class DishServiceIM implements DishService {
     }
 
     public void addIngredientToDish(Dish d, Ingredient i) {
-        d.getIngredients().add(i);
+        d.getIngredients().add(new DishIngredient(d, i));
     }
 
     public boolean removeIngredientFromDish(Dish d, Ingredient i) {

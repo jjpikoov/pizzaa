@@ -6,7 +6,7 @@ import com.pizzaa.domain.customer.repository.CustomerRepository;
 import com.pizzaa.domain.order.Order;
 import com.pizzaa.infrastructure.repository.CustomerRepositoryIM;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 5/4/16.
@@ -23,7 +23,7 @@ public class CustomerServiceIM implements CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public ArrayList<Customer> getAllCustomers() {
+    public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
 

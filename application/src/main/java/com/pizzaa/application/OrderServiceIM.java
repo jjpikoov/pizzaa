@@ -7,7 +7,7 @@ import com.pizzaa.domain.order.Order;
 import com.pizzaa.domain.order.repository.OrderRepository;
 import com.pizzaa.infrastructure.repository.OrderRepositoryIM;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 5/4/16.
@@ -25,7 +25,7 @@ public class OrderServiceIM implements OrderService {
     }
 
 
-    public ArrayList<Order> getAllOrders() {
+    public List<Order> getAllOrders() {
         return this.orderRepository.findAll();
     }
 

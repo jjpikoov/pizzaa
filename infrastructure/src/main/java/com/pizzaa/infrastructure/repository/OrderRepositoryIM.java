@@ -4,6 +4,7 @@ import com.pizzaa.domain.order.Order;
 import com.pizzaa.domain.order.repository.OrderRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 5/4/16.
@@ -38,7 +39,7 @@ public class OrderRepositoryIM implements OrderRepository {
         return null;
     }
 
-    public ArrayList<Order> findAll() {
+    public List<Order> findAll() {
         return orders;
     }
 }

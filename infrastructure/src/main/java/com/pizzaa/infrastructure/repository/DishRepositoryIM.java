@@ -4,6 +4,7 @@ import com.pizzaa.domain.dish.Dish;
 import com.pizzaa.domain.dish.repository.DishRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 4/9/16.
@@ -66,7 +67,7 @@ public class DishRepositoryIM implements DishRepository {
         return null;
     }
 
-    public ArrayList<Dish> findAll() {
+    public List<Dish> findAll() {
         return dishes;
     }
 }

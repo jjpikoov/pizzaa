@@ -4,6 +4,7 @@ import com.pizzaa.domain.admin.Admin;
 import com.pizzaa.domain.admin.repository.AdminRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 5/4/16.
@@ -45,7 +46,7 @@ public class AdminRepositoryIM implements AdminRepository {
 
     }
 
-    public ArrayList<Admin> findAll() {
+    public List<Admin> findAll() {
         return admins;
     }
 }

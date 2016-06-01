@@ -4,13 +4,13 @@ import com.pizzaa.domain.dish.Dish;
 import com.pizzaa.domain.order.Delivery;
 import com.pizzaa.domain.order.Order;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjpikoov on 4/9/16.
  */
 public interface OrderService {
-    ArrayList<Order> getAllOrders();
+    List<Order> getAllOrders();
     void addOrder(Order o);
     boolean removeOrder(int id);
     Order getOrder(int id);
