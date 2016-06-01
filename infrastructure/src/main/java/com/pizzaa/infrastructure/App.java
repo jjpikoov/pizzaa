@@ -7,7 +7,7 @@ package com.pizzaa.infrastructure;
 public class App 
 {
     public static void main( String[] args ) {
-//
+
 //        Admin a = new Admin();
 //        a.setId(1);
 //        a.setLogin("login1");

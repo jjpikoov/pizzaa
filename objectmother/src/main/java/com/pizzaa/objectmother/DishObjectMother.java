@@ -2,6 +2,7 @@ package com.pizzaa.objectmother;
 
 import com.pizzaa.domain.dish.Dish;
 import com.pizzaa.domain.dish.Ingredient;
+import com.pizzaa.domain.dish.persistance.DishIngredient;
 
 import java.util.ArrayList;
 
@@ -31,8 +32,8 @@ public class DishObjectMother {
         d.setTotalWeight(10);
         Ingredient i1 = new Ingredient();
         i1.setId(1);
-        ArrayList<Ingredient> il1 = new ArrayList<Ingredient>();
-        il1.add(i1);
+        ArrayList<DishIngredient> il1 = new ArrayList<DishIngredient>();
+        il1.add(new DishIngredient(d, i1));
         d.setIngredients(il1);
 
         return d;

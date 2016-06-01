@@ -14,6 +14,7 @@ import java.util.List;
  */
 
 @Service("adminService")
+@Transactional
 public class AdminServiceIM implements AdminService {
 
     @Autowired
@@ -27,22 +28,22 @@ public class AdminServiceIM implements AdminService {
 //        this.adminRepository = adminRepository;
 //    }
 
-    @Transactional
+//    @Transactional
     public List<Admin> getAllAdmins() {
         return adminRepository.findAll();
     }
 
-    @Transactional
+//    @Transactional
     public void addAdmin(Admin a) {
         this.adminRepository.insert(a);
     }
 
-    @Transactional
+//    @Transactional
     public boolean removeAdmin(int id) {
         return this.adminRepository.delete(id);
     }
 
-    @Transactional
+//    @Transactional
     public Admin getAdmin(int id) {
         return this.adminRepository.find(id);
     }

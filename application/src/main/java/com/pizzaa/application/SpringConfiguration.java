@@ -17,10 +17,9 @@ import java.util.Properties;
  * Created by jjpikoov on 5/31/16.
  */
 
-
+//@ComponentScan(basePackageClasses = {AdminRepositoryIM.class, AdminServiceIM.class})
 @Configuration
 @EnableTransactionManagement
-//@ComponentScan({"com.pizzaa.application"})
 public class SpringConfiguration {
 
     @Bean

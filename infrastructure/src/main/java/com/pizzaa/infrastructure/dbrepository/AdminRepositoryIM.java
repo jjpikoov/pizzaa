@@ -5,7 +5,7 @@ import com.pizzaa.domain.admin.repository.AdminRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by jjpikoov on 5/30/16.
  */
 
-@Service
+@Repository
 public class AdminRepositoryIM implements AdminRepository {
 
     @Autowired

@@ -39,10 +39,10 @@ public class AdminRepositoryIM implements AdminRepository {
         for (int i = 0; i < admins.size(); i++){
             a = admins.get(i);
             if (a.getId() == id){
-                break;
+                return a;
             }
         }
-        return a;
+        return null;
 
     }
 
