@@ -1,13 +1,13 @@
 package com.pizzaa.application;
 
+import com.pizzaa.infrastructure.dbrepository.AdminRepositoryIM;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -17,9 +17,10 @@ import java.util.Properties;
  * Created by jjpikoov on 5/31/16.
  */
 
-//@ComponentScan(basePackageClasses = {AdminRepositoryIM.class, AdminServiceIM.class})
-@Configuration
-@EnableTransactionManagement
+@ComponentScan(basePackageClasses = {AdminRepositoryIM.class, AdminServiceIM.class})
+//@Configuration
+//@EnableTransactionManagement
+//@ComponentScan({"com.pizzaa.infrastructure", "com.pizza.application"})
 public class SpringConfiguration {
 
     @Bean
