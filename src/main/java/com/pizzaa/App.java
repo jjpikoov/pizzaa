@@ -4,10 +4,12 @@ package com.pizzaa;
  * Hello world!
  *
  */
-public class App 
+//@Configuration
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+
+
     }
 }

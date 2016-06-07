@@ -2,32 +2,34 @@ package com.pizzaa.infrastructure.dbrepository;
 
 import com.pizzaa.domain.admin.Admin;
 import com.pizzaa.domain.admin.repository.AdminRepository;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
+
+
 
 /**
  * Created by jjpikoov on 5/30/16.
  */
 
 @Repository
+@Transactional
 public class AdminRepositoryIM implements AdminRepository {
 
-    @Autowired
-    private SessionFactory sessionFactory;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     public void insert(Admin x) {
-        sessionFactory.getCurrentSession().save(x);
+        entityManager.persist(x);
     }
 
 
     public boolean delete(int id) {
-        Session s = sessionFactory.getCurrentSession();
-        Admin a = s.byId(Admin.class).load(id);
-        s.delete(a);
+        Admin a = entityManager.find(Admin.class, id);
+        entityManager.remove(a);
 
         if (a == null)
             return false;
@@ -36,14 +38,10 @@ public class AdminRepositoryIM implements AdminRepository {
     }
 
     public Admin find(int id) {
-        return sessionFactory.getCurrentSession().byId(Admin.class).load(id);
+        return (Admin) entityManager.find(Admin.class, id);
     }
 
     public List<Admin> findAll() {
-        return sessionFactory.getCurrentSession().createCriteria(Admin.class).list();
+        return entityManager.createQuery("SELECT e FROM Admin e").getResultList();
     }
-
-//    public List<Admin> findAll() {
-//        return sessionFactory.getCurrentSession().createCriteria(Admin.class).list();
-//    }
 }
