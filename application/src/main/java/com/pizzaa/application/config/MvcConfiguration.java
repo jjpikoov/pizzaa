@@ -12,15 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebMvc
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
-//    @Bean
-//    public ViewResolver getViewResolver() {
-//        MustacheViewResolver resolver = new MustacheViewResolver();
-//        resolver.setOrder(0);
-//        resolver.setCache(false);
-//        resolver.setPrefix("/resources/templates/");
-//        resolver.setSuffix(".html");
-//        return resolver;
-//    }
 
     @Override
     public void configureDefaultServletHandling(

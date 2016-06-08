@@ -4,6 +4,7 @@ import com.pizzaa.application.interfaces.AdminService;
 import com.pizzaa.domain.admin.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,8 +20,7 @@ public class AdminController {
     private AdminService adminService;
 
     @RequestMapping(value = "haa", method = RequestMethod.GET)
-//    @ResponseBody
-    public String shellosdfsdfsdfss(){
+    public String hello(){
 
         Admin a = new Admin();
         a.setLogin("cont1");
@@ -31,7 +31,8 @@ public class AdminController {
     }
 
     @RequestMapping(value = "admin", method = RequestMethod.GET)
-    public String admin(){
-        return "admin.html";
+    public String admin(Model model){
+        model.addAttribute("x", "foo");
+        return "admin";
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Created by jjpikoov on 6/6/16.
  */
-//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+
 @SpringBootApplication//(exclude = DataSourceAutoConfiguration.class)
 public class App {
 
