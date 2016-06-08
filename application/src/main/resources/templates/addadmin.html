@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='webjars/foundation/6.2.0/dist/foundation.min.css'>
+
+    <script src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+    <script src="webjars/foundation/6.2.0/dist/foundation.min.js"></script>
+    <script src="webjars/foundation/6.2.0/js/foundation.drilldown.js"></script>
+    <script src="webjars/foundation/6.2.0/js/foundation.responsiveMenu.js"></script>
+    <script src="webjars/foundation/6.2.0/js/foundation.dropdownMenu.js"></script>
+    <script src="webjars/foundation/6.2.0/js/foundation.dropdown.js"></script>
+</head>
+<body>
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">Pizzaa - {{title}}</li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li><input type="search" placeholder="Search"></li>
+            <li><button type="button" class="button">Search</button></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-3 columns"></div>
+    <div class="small-6 columns">
+
+        <form method="post", action="/addadmin">
+            <div class="row">
+                <div class="row">
+                    <label>Login
+                        <input name="login" type="text" placeholder="login">
+                    </label>
+                </div>
+                <div class="row">
+                    <label>Password
+                        <input name="password" type="password" placeholder="password">
+                    </label>
+                </div>
+                <div class="row">
+                    <label>Email
+                        <input name="email" type="text" placeholder="email">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" value="submit" class="success button">Save</button>
+            </div>
+        </form>
+
+
+
+    </div>
+    <div class="small-3 columns"></div>
+</div>
+
+</body>
+</html>

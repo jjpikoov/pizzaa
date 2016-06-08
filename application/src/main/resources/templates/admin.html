@@ -1,13 +1,63 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <title>Getting Started: Serving Web Content</title>
+  <title>{{title}}</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='webjars/foundation/6.2.0/dist/foundation.min.css'>
+
+  <script src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+  <script src="webjars/foundation/6.2.0/dist/foundation.min.js"></script>
+  <script src="webjars/foundation/6.2.0/js/foundation.drilldown.js"></script>
+  <script src="webjars/foundation/6.2.0/js/foundation.responsiveMenu.js"></script>
+  <script src="webjars/foundation/6.2.0/js/foundation.dropdownMenu.js"></script>
+  <script src="webjars/foundation/6.2.0/js/foundation.dropdown.js"></script>
 </head>
-  <body>
-    <p>{{x}}</p>
-    <p>sldkfj</p>
-  <p>sdklfjkljfskldjfklsdjfkl</p>
-  <p>new</p>
-  </body>
+<body>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Pizzaa- {{title}}</li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-3 columns"></div>
+  <div class="small-6 columns">
+     <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Remove</th>
+        <th>Add</th>
+      </tr>
+      </thead>
+      <tbody>
+        {{#admins}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{login}}</td>
+            <td>{{password}}</td>
+            <td>{{email}}</td>
+            <td><a class="small expanded button" href="/removeadmin/{{id}}">Remove</a></td>
+            <td><a class="small expanded button" href="/addadmin">Add</a></td>
+          </tr>
+        {{/admins}}
+      </tbody>
+    </table>
+  </div>
+  <div class="small-3 columns"></div>
+</div>
+
+</body>
 </html>

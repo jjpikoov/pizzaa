@@ -28,7 +28,7 @@ public class AdminRepositoryIM implements AdminRepository {
 
 
     public boolean delete(int id) {
-        Admin a = entityManager.find(Admin.class, id);
+        Admin a = (Admin) entityManager.find(Admin.class, id);
         entityManager.remove(a);
 
         if (a == null)
