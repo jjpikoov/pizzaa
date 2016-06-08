@@ -27,6 +27,53 @@ import java.util.Properties;
 public class InfrastructureConfg {
 
 
+//    @Bean
+//    public ViewResolver viewResolver(ResourceLoader resourceLoader) {
+//        MustacheViewResolver mustacheViewResolver = new MustacheViewResolver();
+//        mustacheViewResolver.setPrefix("/WEB-INF/views/");
+//        mustacheViewResolver.setSuffix(".mustache");
+//        MustacheTemplateLoader mustacheTemplateLoader = new MustacheTemplateLoader();
+//        mustacheTemplateLoader.setResourceLoader(resourceLoader);
+//        mustacheViewResolver.setTemplateLoader(mustacheTemplateLoader);
+//        return mustacheViewResolver;
+//    }
+
+//    @Bean
+//    public ViewResolver viewResolver(ResourceLoader resourceLoader){
+//        MustacheViewResolver mustacheViewResolver = new MustacheViewResolver();
+//        mustacheViewResolver.setPrefix("/resources/templates/");
+//        mustacheViewResolver.setSuffix(".html");
+//        MustacheResourceTemplateLoader mustacheResourceTemplateLoader = new MustacheResourceTemplateLoader();
+//        mustacheResourceTemplateLoader.setResourceLoader(resourceLoader);
+//        mustacheViewResolver.setTemplateLoader(mustacheResourceTemplateLoader);
+//        mustacheViewResolver.
+//        return mustacheViewResolver;
+//    }
+
+
+//    @Bean
+//    public ViewResolver viewResolver() {
+//        MustacheViewResolver viewResolver = new MustacheViewResolver();
+//        viewResolver.setOrder(0);
+//        viewResolver.setViewNames("admin");
+////        viewResolver.setPrefix("/resources/templates/");
+//        viewResolver.setSuffix(".html");
+//        return viewResolver;
+//    }
+
+//
+//    @Bean
+//    public ViewResolver getViewResolver(ResourceLoader resourceLoader) {
+//        MustacheViewResolver mustacheViewResolver = new MustacheViewResolver();
+//        mustacheViewResolver.setPrefix("/resources/templates/");
+//        mustacheViewResolver.setSuffix(".html");
+//        mustacheViewResolver.setCache(false);
+//        mustacheViewResolver.setContentType("text/html;charset=utf-8");
+//
+//        return mustacheViewResolver;
+//    }
+//
+
     @Bean
     public AdminService adminService(){
         AdminService adminService =  new AdminServiceIM();
